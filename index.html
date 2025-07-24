@@ -48,9 +48,13 @@
       background-size: cover;
       opacity: 0.7;
     }
+    html, body {
+      height: 100%;
+    }
     body {
       background: var(--bg);
       min-height: 100vh;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -59,13 +63,15 @@
       transition: background 0.4s;
       position: relative;
       z-index: 1;
+      overflow-x: hidden;
     }
     .container {
       background: var(--container-bg);
       border-radius: 20px;
       box-shadow: var(--shadow), 0 0 32px 0 #6c47ff33;
       padding: 40px 32px 32px 32px;
-      min-width: 340px;
+      width: 100%;
+      max-width: 400px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -195,13 +201,13 @@
       top: -56px;
       pointer-events: auto;
     }
-    @media (max-width: 500px) {
+    @media (max-width: 900px) {
       .container {
-        min-width: 90vw;
-        padding: 24px 8vw 24px 8vw;
+        max-width: 98vw;
+        padding: 32px 4vw 24px 4vw;
       }
       h2 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
       }
       .password-group {
         padding: 6px 6px 6px 12px;
@@ -209,6 +215,47 @@
       .generate-btn {
         font-size: 1rem;
         padding: 10px 18px;
+      }
+    }
+    @media (max-width: 600px) {
+      html, body {
+        height: 100%;
+      }
+      body {
+        min-height: 100vh;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+      }
+      .container {
+        width: 100%;
+        max-width: 400px;
+        min-width: unset;
+        margin: 0 auto;
+        padding: 18px 5vw 18px 5vw;
+        border-radius: 12px;
+        box-sizing: border-box;
+      }
+      h2 {
+        font-size: 1.1rem;
+      }
+      .password-group {
+        padding: 4px 4px 4px 8px;
+        font-size: 1rem;
+      }
+      .password-input {
+        font-size: 1rem;
+      }
+      .generate-btn {
+        font-size: 0.95rem;
+        padding: 8px 10px;
+      }
+      .mode-toggle {
+        top: 8px;
+        right: 8px;
+        font-size: 1rem;
       }
     }
   </style>
